@@ -1,0 +1,257 @@
+/* reset CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: 0;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Navigation - Dropdown Menu  */
+nav {
+  width: 100%;
+  height: 70px;
+  padding: 0 20px;
+  background: #fff;
+  box-shadow: 0 0 10px #333 inset;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+.li_link {
+  margin: 0 25px;
+  padding: 10px 0;
+}
+.li_link > a {
+  color: black;
+}
+
+.li_link:hover > a {
+  color: #d5d5d5;
+}
+
+.fa-angle-down {
+  margin-left: 10px;
+}
+
+.li_link:nth-child(2),
+.li_link:nth-child(3) {
+  position: relative;
+}
+
+.sub-menu-1 {
+  display: none;
+  width: 160px;
+  padding: 10px 0 10px 10px;
+  background: #f5f5f5;
+  box-shadow: 5px 5px 10px #d5d5d5;
+
+  position: absolute;
+  top: 36px;
+  left: 0;
+}
+.li_link:hover .sub-menu-1 {
+  display: block;
+}
+
+.sub-menu-1 a {
+  /* > herseyi degistiriyor ...! */
+  display: block;
+  width: 100%;
+  padding: 15px 0 5px;
+  border-bottom: 1px solid rgba(250, 172, 4, 0.3);
+  color: black;
+}
+
+.sub-menu-1 a:hover {
+  color: #d5d5d5;
+}
+
+.fa-angle-right {
+  float: right;
+  margin-right: 10px;
+}
+
+.nested_li_link {
+  position: relative;
+}
+.sub-menu-2 {
+  display: none;
+  color: black;
+  background: #f5f5f5;
+  box-shadow: 5px 5px 10px #d5d5d5;
+  padding: 10px 0 10px 10px;
+  position: absolute;
+  width: 180px;
+  right: -180px;
+  top: 0;
+}
+.nested_li_link:hover .sub-menu-2 {
+  display: block;
+}
+
+/* Form part */
+section {
+  width: 60%;
+  margin: 0 auto 50px;
+  box-shadow: 0 0 10px #333;
+
+  z-index: 1;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 300px;
+  background: url("./images/banner.jpg") no-repeat center/cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%, 0 0);
+
+  position: relative;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(180deg, #000, transparent);
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(360deg, #000, transparent);
+}
+
+.banner h1 {
+  color: rgb(240, 236, 236);
+  text-shadow: 5px 5px 5px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* form */
+form {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+}
+fieldset {
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 20px 0;
+  border-color: #73d1f9;
+}
+fieldset:nth-of-type(2) {
+  border-color: #8646ed;
+}
+fieldset:nth-of-type(3) {
+  border-color: #e64ff4;
+}
+legend {
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+input,
+select {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 6px;
+}
+
+.item:hover label,
+input:hover::placeholder,
+select:hover {
+  color: #0173ff;
+}
+input:hover,
+select:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 6px 0 #095484;
+}
+
+.question p span {
+  color: red;
+}
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+label.check {
+  margin: 0 0 0 10px;
+}
+label.check a {
+  font-weight: bold;
+}
+
+.btn-block {
+  margin-top: 10px;
+  text-align: center;
+}
+button {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #095484;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #0666a3;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+  .li_link {
+    margin: 0 5px;
+  }
+  .fa-angle-down {
+    margin-left: 5px;
+  }
+
+  /* Form part */
+  section {
+    width: calc(95% - 10px);
+  }
+}
